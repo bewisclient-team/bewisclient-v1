@@ -1,0 +1,28 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "bewis09.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BlockItemMixin"
+  ],
+  "client": [
+    "BackgroundRendererMixin",
+    "DrawableHelperMixin",
+    "InGameHudMixin",
+    "InGameOverlayRendererMixin",
+    "LivingEntityMixin",
+    "MinecraftClientMixin",
+    "MouseMixin",
+    "SimpleOptionMixin",
+    "SplashOverlayMixin",
+    "TextMixin",
+    "TitleScreenMixin",
+    "TooltipComponentMixin",
+    "WorldRendererMixin",
+    "ZoomMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
