@@ -1,12 +1,15 @@
 package bewis09.main;
 
-import bewis09.cape.AnimatedCape;
 import bewis09.cape.Cape;
+import bewis09.cape.Capes;
+import bewis09.hat.Hat;
 import bewis09.mixin.DrawableHelperMixin;
 import bewis09.modmenu.ModMenu;
 import bewis09.screen.OptionScreen;
 import bewis09.util.ExtraInfo;
 import bewis09.util.FileReader;
+import bewis09.wings.Wing;
+import bewis09.wings.WingFeatureRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -18,11 +21,14 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
 
 public class Main implements ClientModInitializer {
+
+    // 3604 Lines of Code
 
     public static List<Long> rightList = new ArrayList<>();
     public static List<Long> leftList = new ArrayList<>();
@@ -94,9 +100,19 @@ public class Main implements ClientModInitializer {
         ExtraInfo.register(new ExtraInfo(state -> ExtraInfo.withText(state, TripwireBlock.ATTACHED)), Blocks.TRIPWIRE);
         ExtraInfo.register(new ExtraInfo(state -> ExtraInfo.withText(state, SculkShriekerBlock.CAN_SUMMON)), Blocks.SCULK_SHRIEKER);
         setOptionBackground();
-        autoclicker();
-        Cape.setCurrentCape(new AnimatedCape(32,"golden_creeper_%20",80,false));
+        rgb();
         ModMenu.load();
+        wing();
+        try {
+            Cape.setCurrentCape(Capes.CAPES[(int) FileReader.getByFirstIntFirst("Cosmetics", "Cape", 0)]);
+            Cape.setCurrentRealCape(Capes.CAPES[(int) FileReader.getByFirstIntFirst("Cosmetics", "Cape", 0)]);
+        } catch (Exception ignored){}
+        try {
+            Hat.current_hat=(Hat.HATS[(int) FileReader.getByFirstIntFirst("Cosmetics", "Hat", 0)]);
+        } catch (Exception ignored){}
+        try {
+            Wing.current_wing=(Wing.WINGS[(int) FileReader.getByFirstIntFirst("Cosmetics", "Wing", 0)]);
+        } catch (Exception ignored){}
     }
 
     public static void printGammaMessage(double gamma) {
@@ -106,14 +122,21 @@ public class Main implements ClientModInitializer {
                 .append(": ").append(gamma * 1000f + "%"),true);
     }
 
-    public static void autoclicker() {
+    public static void rgb() {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                autoclicker();
+                rgb();
                 rgbValue = (rgbValue+1)%60;
+
             }
         },(int) getValue(FileReader.getByFirstIntFirst("Double","hitrgbspeed",0.2),10,500));
+    }
+
+    public static void wing() {
+        new Timer(50, e -> {
+            WingFeatureRenderer.wing_animation_duration=(WingFeatureRenderer.wing_animation_duration+1)%60;
+        }).start();
     }
 
     public static int rCount() {

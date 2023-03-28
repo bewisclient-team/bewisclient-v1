@@ -34,7 +34,7 @@ public class OptionScreen extends Screen {
         fill(matrices, (int) (100+ext1),height/2-56-2, (int) (103+ext1),height/2-36-2,current==0 ? 0xFF00FF00 : -1);
         fill(matrices, (int) (100+ext2),height/2-32-2, (int) (103+ext2),height/2-12-2,current==1 ? 0xFF00FF00 : -1);
         fill(matrices, (int) (100+ext3),height/2-8-2, (int) (103+ext3),height/2+12-2,current==2 ? 0xFF00FF00 : -1);
-        fill(matrices, (int) (100+ext4),height/2+16-2, (int) (103+ext4),height/2+36-2, 0xFFFF0000);
+        fill(matrices, (int) (100+ext4),height/2+16-2, (int) (103+ext4),height/2+36-2, current==3 ? 0xFF00FF00 : -1);
         fill(matrices, (int) (100+ext5),height/2+40-2, (int) (103+ext5),height/2+60-2, 0xFFFF0000);
         drawTextWithShadow(matrices,textRenderer, Text.translatable("bewis.option.widgets"),5,height/2-56-2+7,-1);
         drawTextWithShadow(matrices,textRenderer,Text.translatable("bewis.option.render"),5,height/2-32-2+7,-1);
@@ -87,6 +87,9 @@ public class OptionScreen extends Screen {
         }
         if(mouseX<100+ext3 && mouseY < height/2f+12-2 && mouseY > height/2f-8-2) {
             MinecraftClient.getInstance().setScreen(new ModScreen(this));
+        }
+        if(mouseX<100+ext4 && mouseY < height/2f+36-2 && mouseY > height/2f+16-2) {
+            MinecraftClient.getInstance().setScreen(new CosmeticsScreen());
         }
         return super.mouseClicked(mouseX, mouseY, button);
     }

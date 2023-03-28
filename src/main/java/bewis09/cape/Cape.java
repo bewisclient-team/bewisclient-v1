@@ -8,6 +8,8 @@ public class Cape extends AbstractCape {
 
     private static AbstractCape currentCape;
 
+    private static AbstractCape currentRealCape;
+
     public Cape(String name) {
         this.identifier = new Identifier("bewisclient","cape/"+name+".png");
     }
@@ -18,6 +20,15 @@ public class Cape extends AbstractCape {
 
     public static void setCurrentCape(AbstractCape currentCape) {
         Cape.currentCape = currentCape;
+    }
+
+    public static void setCurrentRealCape(AbstractCape currentCape) {
+        Cape.currentCape = currentCape;
+        Cape.currentRealCape = currentCape;
+    }
+
+    public static AbstractCape getCurrentRealCape() {
+        return currentRealCape;
     }
 
     @Override
