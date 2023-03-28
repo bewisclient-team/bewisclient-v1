@@ -36,5 +36,14 @@
   "bewis.option.blockhitrgb": "Blockhit RGB",
   "bewis.option.blockhitalpha": "Blockhit Alpha",
   "bewis.option.blockhitcolor": "Blockhit Color",
-  "bewis.option.hitrgbspeed": "Blockhit RGB Speed"
+  "bewis.option.hitrgbspeed": "Blockhit RGB Speed",
+  "bewis.option.use": "Use",
+  "bewis.option.rotate": "Rotate",
+  "bewisclient.keybinding": "Bewisclient",
+  "bewis.gamma": "Toggle Gamma",
+  "bewis.gamma_up": "Increase Gamma",
+  "bewis.gamma_down": "Decrease Gamma",
+  "bewis.night_vision": "Toggle Night Vision",
+  "bewis.option.open": "Open Options",
+  "bewis.zoom": "Zoom"
 }

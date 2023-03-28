@@ -36,5 +36,14 @@
   "bewis.option.blockhitrgb": "Blockumrandungs RGB",
   "bewis.option.blockhitalpha": "Blockumrandungdurchsichtigkeit",
   "bewis.option.blockhitcolor": "Blockumrandungsfarbe",
-  "bewis.option.hitrgbspeed": "Blockumrandung RGB-Geschwindigkeit"
+  "bewis.option.hitrgbspeed": "Blockumrandung RGB-Geschwindigkeit",
+  "bewis.option.use": "Benutzen",
+  "bewis.option.rotate": "Drehen",
+  "bewisclient.keybinding": "Bewisclient",
+  "bewis.gamma": "Helligkeit umstellen",
+  "bewis.gamma_up": "Helligkeit erhöhen",
+  "bewis.gamma_down": "Helligkeit kleiner stellen",
+  "bewis.night_vision": "Nachtsicht umstellen",
+  "bewis.option.open": "Optionen Öffnen",
+  "bewis.zoom": "Zoom"
 }
