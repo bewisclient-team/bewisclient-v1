@@ -4,6 +4,7 @@
   "version": "${version}",
 
   "name": "Bewisclient",
+  "icon": "assets/bewisclient/gui/bewisclient.png",
   "description": "The new best Client",
   "authors": [
     "Bewis09"
@@ -13,6 +14,9 @@
   "entrypoints": {
     "client": [
       "bewis09.main.Main"
+    ],
+    "modmenu": [
+      "bewis09.modmenu.BewisImplementer"
     ]
   },
   "mixins": [
@@ -23,7 +27,7 @@
   "depends": {
     "fabricloader": ">=0.14.11",
     "fabric-api": "*",
-    "minecraft": "~1.19.3",
+    "minecraft": "1.20.*",
     "java": ">=17"
   },
   "suggests": {

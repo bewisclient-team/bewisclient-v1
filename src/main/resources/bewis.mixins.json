@@ -4,13 +4,19 @@
   "package": "bewis09.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BlockItemMixin"
   ],
   "client": [
     "BackgroundRendererMixin",
+    "BlockItemMixin",
+    "BossBarHudMixin",
+    "ClientPlayerInteractionManagerMixin",
+    "DebugHudMixin",
     "DrawableHelperMixin",
+    "DrawContextMixin",
     "InGameHudMixin",
     "InGameOverlayRendererMixin",
+    "InGameScreenMixin",
+    "InventoryMixin",
     "LivingEntityMixin",
     "MinecraftClientMixin",
     "MouseMixin",
